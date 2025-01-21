@@ -1,0 +1,20 @@
+export default function PageRouls() {
+
+  return (
+    <section>
+      <div className="max-w-[68rem] pt-[1.8rem]   mx-auto mt-[2rem] px-[1.5rem] md:px-[4rem] flex justify-center">
+      <div className=" flex   mt-[-3rem] justify-between items-center w-[100%]">
+       <div className=" pb-[5.5rem]" >
+            <h1 className=" mb-[1.5rem] text-[1.4rem] font-semibold">شرایط و قوانین استفاده از خدمات نرم افزار های تسهیل گر خدمات نوبت دهی سایت پزشکی نوبت دات آی آر </h1>
+            <p className=" text-[#878787] font-semibold"> 
+            کاربر گرامی لطفا مواردی که در این صفحه ‌ذکر شده است را به منظور 
+            استفاده بهینه از خدمات نوبت دات آی آر به دقت مطالعه نمایید.
+            </p>
+            <p className=" text-[#878787] font-semibold">  </p>
+       </div>
+          <img className=" w-[28rem] ml-[1rem]" src="https://nobat.ir/public/ui_v2_0/images/uiv2/nobatLogo-alt.png" alt="" />
+      </div>
+      </div>
+    </section>
+  )
+}

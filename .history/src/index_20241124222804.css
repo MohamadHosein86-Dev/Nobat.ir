@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer components {
+    .input {
+        @apply text-slate-950 px-[1rem] outline-none rounded-md border-[2px] border-gray-200 bg-gray-100 py-[1.4rem] w-[17rem] mt-[-.25rem]
+    }
+
+    /* https://dev.to/afif/i-made-100-css-loaders-for-your-next-project-4eje */
+    .loader {
+        width: 45px;
+        aspect-ratio: 0.75;
+        --c: no-repeat linear-gradient(theme(colors.stone.800) 0 0);
+        background: var(--c) 0% 50%, var(--c) 50% 50%, var(--c) 100% 50%;
+        background-size: 20% 50%;
+        animation: loading 1s infinite linear;
+    }
+
+    @keyframes loading {
+        20% {
+            background-position: 0% 0%, 50% 50%, 100% 50%;
+        }
+
+        40% {
+            background-position: 0% 100%, 50% 0%, 100% 50%;
+        }
+
+        60% {
+            background-position: 0% 50%, 50% 100%, 100% 0%;
+        }
+
+        80% {
+            background-position: 0% 50%, 50% 50%, 100% 100%;
+        }
+    }
+}
+
+.custom_shadow {
+    box-shadow: 0 0 2px 0 rgba(255, 255, 255, 0.42)
+}
+.custom_shadow1 {
+    box-shadow: 0 0 2px 0 rgba(255, 255, 255, 0.95)
+}
+.custom_shadow2 {
+    box-shadow: 0 0 2px #598a98
+}
+.custom_shadow3 {
+    box-shadow:  0 0 2px rgba(0, 0, 0, 0.25);
+}
+.custom_shadow4 {
+    box-shadow:  0 3px 4px #c7c7c7;
+}
+
+
+
+.menu {
+    scrollbar-width: none;
+}
+
+.hide {
+    display: none;
+}
+
+.mapContainer {
+    flex: 1;
+    position: relative;
+  }
+
+  /* استایل اصلی بخش */
+.star-rating {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* استایل ستاره‌ها */
+  .star {
+    font-size: 24px;
+    line-height: 1;
+    position: relative;
+    margin: 0 2px; /* فاصله کوچک بین ستاره‌ها */
+  }
+  
+  /* ستاره کامل */
+  .star.full {
+    color: gold; /* رنگ طلایی */
+  }
+  
+  /* ستاره خالی */
+  .star.empty {
+    color: lightgray; /* رنگ خاکستری */
+  }
+  
+  /* ستاره نصفه */
+  .star.half {
+    color: gold; /* رنگ اولیه */
+    position: relative;
+  }
+  
+  /* ماسک برای ایجاد ستاره نصفه */
+  .star.half .half-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%; /* نمایش فقط نصف ستاره */
+    overflow: hidden;
+    color: lightgray; /* رنگ خاکستری برای نصفه دیگر */
+  }
+
+.widthImg{
+    max-width: min(100%, 450px)
+}
+.afterLink{
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 60%;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #0f9daf;
+}
+.beforLink{
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 60%;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #0f9daf;
+}

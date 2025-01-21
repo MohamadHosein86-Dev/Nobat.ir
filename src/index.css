@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .input {
+        @apply text-slate-950 px-[1rem] outline-none rounded-md border-[2px] border-gray-200 bg-gray-100 py-[1.4rem] w-[17rem] mt-[-.25rem]
+    }
+
+    /* https://dev.to/afif/i-made-100-css-loaders-for-your-next-project-4eje */
+    .loader {
+        width: 45px;
+        aspect-ratio: 0.75;
+        --c: no-repeat linear-gradient(theme(colors.stone.800) 0 0);
+        background: var(--c) 0% 50%, var(--c) 50% 50%, var(--c) 100% 50%;
+        background-size: 20% 50%;
+        animation: loading 1s infinite linear;
+    }
+
+    @keyframes loading {
+        20% {
+            background-position: 0% 0%, 50% 50%, 100% 50%;
+        }
+
+        40% {
+            background-position: 0% 100%, 50% 0%, 100% 50%;
+        }
+
+        60% {
+            background-position: 0% 50%, 50% 100%, 100% 0%;
+        }
+
+        80% {
+            background-position: 0% 50%, 50% 50%, 100% 100%;
+        }
+    }
+}
+
+
+.custom_shadow {
+    box-shadow: 0 0 2px 0 rgba(255, 255, 255, 0.42)
+}
+
+.custom_shadow1 {
+    box-shadow: 0 0 2px 0 rgba(255, 255, 255, 0.95)
+}
+
+.custom_shadow2 {
+    box-shadow: 0 0 2px #598a98
+}
+
+.custom_shadow3 {
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
+}
+
+.custom_shadow4 {
+    box-shadow: 0 3px 4px #c7c7c7;
+}
+
+.custom_shadow5 {
+    box-shadow: 0 2px 3px 0 #00000029;
+}
+
+.custom_shadow6 {
+    box-shadow: 0 3px 3px 0 #dedede;
+}
+
+.custom_shadow7:hover {
+    box-shadow: 0 8px 23px 0 rgba(213, 36, 36, 0.674);
+}
+
+.custom_shadow8 {
+    box-shadow: 0 3px 6px 0 #00000029;
+}
+.custom_shadow9 {
+  box-shadow :  rgba(0, 0, 0, 0.15) 0px 2px 8px ;
+}
+.custom_shadow10:hover{
+   box-shadow: 0 0 0 2px #1890ff33; 
+}
+
+
+.menu {
+    scrollbar-width: none;
+}
+
+.hide {
+    display: none;
+}
+
+.mapContainer {
+    flex: 1;
+    position: relative;
+}
+
+.star-rating {
+    display: flex;
+    align-items: center;
+}
+
+.star {
+    font-size: 24px;
+    line-height: 1;
+    position: relative;
+    margin: 0 2px;
+}
+
+.star.full {
+    color: gold;
+}
+
+.star.empty {
+    color: lightgray;
+}
+
+.star.half {
+    color: gold;
+    position: relative;
+}
+
+.star.half .half-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    overflow: hidden;
+    color: lightgray;
+}
+
+.widthImg {
+    max-width: min(100%, 450px)
+}
+
+.afterLink::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 90%;
+    right: 4rem;
+    top: .8rem;
+    transform: translateY(-50%);
+    background-color: #0f9daf;
+}
+
+.afterLink1::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 90%;
+    right: 4.2rem;
+    top: .8rem;
+    transform: translateY(-50%);
+    background-color: #0f9daf;
+}
+.chelckBox{
+    width: 1.2rem;
+    height: 1.2rem;
+}
