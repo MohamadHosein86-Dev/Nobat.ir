@@ -1,0 +1,6 @@
+{
+    "platform": "node",
+    "node": {
+        "start": "npm run server"
+    }
+}
