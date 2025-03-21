@@ -6,8 +6,8 @@ export default function HedarProfaile() {
     const {pathname}=useLocation(); 
 
     if(pathname === "/user.nobat.ir") return (
-        <div className="max-w-[54rem] flex gap-[2rem] px-[1.5rem] mx-auto py-[1rem]  md:px-[4rem] md:py-[2rem]">
-                <Link to={"https://drhast.com/q"} className=" w-[50%] custom_shadow5 bg-[#fbfbfb] flex items-center justify-center rounded-[1.1rem] flex-col-reverse p-[.5rem] ">
+        <div className="max-w-[54rem] flex gap-[2rem] px-[1.5rem] mx-auto py-[2rem]  md:px-[4rem] md:py-[2rem]">
+                <Link to={"https://drhast.com/q"} className=" text-[.8rem] sm:text-[1rem]  w-[50%] custom_shadow5 bg-[#fbfbfb] flex items-center justify-center rounded-[1.1rem] flex-col-reverse p-[.5rem] ">
                     <span>پرسش و پاسخ</span>
                     <span>
                       <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1.5rem" width="1.5rem" xmlns="http://www.w3.org/2000/svg" style={{color:"rgb(212, 212, 212)"}}>
@@ -15,7 +15,7 @@ export default function HedarProfaile() {
                     </span>
                 </Link>
                 <IsShowFavDoctor >
-                        <Link to={"/user.nobat.ir/favarite"} className=" w-[50%] custom_shadow5 bg-[#fbfbfb] flex items-center justify-center rounded-[1.1rem] flex-col-reverse p-[.5rem] ">
+                        <Link to={"/user.nobat.ir/favarite"} className=" text-[.8rem] sm:text-[1rem]   w-[50%] custom_shadow5 bg-[#fbfbfb] flex items-center justify-center rounded-[1.1rem] flex-col-reverse p-[.5rem] ">
                             <span> لیست مورد علاقه من</span>
                             <span>
                                 <svg  xmlns="http://www.w3.org/2000/svg" fill="red" viewBox="0 0 24 24" strokeWidth={1.5}  className="size-6">

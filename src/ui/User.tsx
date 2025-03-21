@@ -6,7 +6,7 @@ export default function User() {
   
   if(!authenticatd) return null;
   if (authenticatd) return (
-       <div className=" bg-[#00748e] ">
+       <div className=" md:px-[0rem]   px-[1rem] bg-[#00748e] ">
         <div className="max-w-[68rem] font-semibold pb-[1.3rem] pt-[1rem] items-center text-[.9rem] gap-[1.5rem] h-[2rem] text-[#fafafa] flex  mx-auto md:px-[4rem] ">
             <Link to={"/user.nobat.ir"} className=" relative afterLink cursor-pointer">(پروفایل)</Link>
             <Link to={"user.nobat.ir/favarite"} className=" relative afterLink1 cursor-pointer">لیست من</Link>

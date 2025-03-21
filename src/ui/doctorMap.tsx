@@ -7,7 +7,7 @@ interface typeDoctor{
 }
 const DoctorMap = ({ doctor }:typeDoctor) => {
     return (
-        <div className=' lg:max-w-[600px] h-[17rem] lg:h-[13rem] m-[0 auto] relative'>
+        <div className=' lg:max-w-[600px] z-[5] h-[17rem] lg:h-[13rem] m-[0 auto] relative'>
             <MapContainer style={{width:"100%" , height:"100%"}} center={[40 , 0]} scrollWheelZoom={true} zoom={12} >
             <TileLayer
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

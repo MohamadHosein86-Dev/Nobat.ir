@@ -7,7 +7,7 @@ export default function PhoneModal({phone , CloseModal= ()=>{} }:typeInput ) {
   
   
   return (
-    <div className=' w-[26rem]   h-[7rem]  '>
+    <div className=' max-w-[26rem]   h-[7rem]  '>
         <div className=" border-b pb-[.5rem]   border-b-[#000000a6] flex flex-col ">
             <div className=" flex justify-between w-[100%]">
               <h2 className=" text-[#000000a6]">شماره مطب</h2>

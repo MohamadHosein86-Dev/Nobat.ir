@@ -19,7 +19,8 @@ export default {
       },
       screens: {
         "custom": { "min": "768px" },
-        "max-with": { "max": "768px" }
+        "max-with": { "max": "768px" },
+        "274px": { "min": "400px" }
       }
     },
   },

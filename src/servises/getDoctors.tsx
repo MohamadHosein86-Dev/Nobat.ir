@@ -26,34 +26,26 @@ export interface DoctorType {
 }
 
 export async function getchDoctors() {
-    try {
-        const response = await fetch('http://localhost:5000/doctors', {
+   
+        const response = await fetch('https://67aa262f65ab088ea7e5d09a.mockapi.io/Doctors', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
             }
         });
-
         if (!response.ok) {
             throw new Error('Network response was not ok ' + response.statusText);
         }
 
         const data = await response.json();
-
-
         
-       return data as DoctorType[] ;
-    }
-     catch (error) {
-        console.error('Error:', error);
-    }
+        return data as DoctorType[] ;
+    
 }
-
-
 
 export async function getchDoctor(id:string) {
     try {
-        const response = await fetch(`http://localhost:5000/doctors/${id}`, {
+        const response = await fetch(`https://67aa262f65ab088ea7e5d09a.mockapi.io/Doctors/${id}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'

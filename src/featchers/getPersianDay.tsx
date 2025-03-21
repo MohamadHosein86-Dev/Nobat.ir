@@ -18,12 +18,10 @@ export default function findNextAvailableDaysInWeek(availableDays: Array<string>
     
     const availableDayDoctor = availableDays.map((day) => daysInPersian.indexOf(day));
     const nextAvailableDays = [];
-    console.log(availableDayDoctor);
     
     for (let i = 0; i <= 6 ; i++) { 
         const nextDayIndex = todayIndex + i;
         
-        console.log( availableDayDoctor.includes(nextDayIndex));
         if (nextDayIndex < 6 && availableDayDoctor.includes(nextDayIndex)) { 
             const nextDay = daysInPersian[nextDayIndex];
             nextAvailableDays.push({ nextDay, nextDayIndex });

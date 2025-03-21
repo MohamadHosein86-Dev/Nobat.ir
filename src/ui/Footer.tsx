@@ -10,7 +10,7 @@ export default function Footer() {
           <div className=" w-[100%] ">
               <div className=" w-[100%] grid grid-cols-1 gap-x-[6rem] gap-y-[1rem]  lg:grid-cols-2">
                 <BtnFooter to="/user.nobat.ir/login" onclick={()=>{}}>ورود</BtnFooter>
-                <BtnFooter to="" onclick={()=>{}}>عضویت پزشکان</BtnFooter>
+                <BtnFooter to="https://drhast.com/q" onclick={()=>{}}> سوالات پزشکی </BtnFooter>
                 <BtnFooter to="/rules" onclick={()=>{}}>قوانین سایت</BtnFooter>
                 <BtnFooter to="/phone" onclick={()=>{}}>تلفن های پشتیبان</BtnFooter>
               </div>

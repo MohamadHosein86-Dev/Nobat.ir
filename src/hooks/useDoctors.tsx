@@ -16,7 +16,7 @@ export default function useDoctors() {
         queryKey:["doctors" , city , specialty , search , page],
         queryFn:getchDoctors
     });
-
+    
 
     // filter
     const doctorsFilter = data?.filter((res)=> city === "" ? res : res.address.split("،")[0].includes(city))

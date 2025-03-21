@@ -10,12 +10,11 @@ export default function SearchDoctors() {
   const [searchparams]=useSearchParams();
   const search = searchparams.get("search") || "";
   const searchBtn = specialties.filter((res)=> search === "" ?  "" : search.split(" ").every((word)=> res.includes(word) ));
-  console.log(search.split("  ").every((word)=>word)); 
 
 
   return (
-    <div className="  max-w-[68rem] mx-auto  px-[1.5rem]  py-[1rem] md:px-[4rem] md:py-[2rem]">
-      {searchBtn  && <button  className="pb-[.3rem] w-[25rem] h-[3.2rem] mx-auto mb-[3rem] text-[#ffff] bg-[#0092ab] border-[#fff] rounded-[9px] border-[1px] custom_shadow4 text-[.95rem] flex items-center justify-center  font-medium " onClick={()=>navigate(`/?specialty=${searchBtn}`)}> لیست پزشکان {searchBtn}</button>  }
+    <div className=" mt-[9rem] md:mt-[0]  max-w-[68rem] mx-auto  px-[1.5rem]  py-[1rem] md:px-[4rem] md:py-[2rem]">
+      {searchBtn  && <button  className="pb-[.3rem] w-[80%] h-[3.2rem] mx-auto mb-[3rem] text-[#ffff] bg-[#0092ab] border-[#fff] rounded-[9px] border-[1px] custom_shadow4 text-[.95rem] flex items-center justify-center  font-medium " onClick={()=>navigate(`/`)}> لیست پزشکان </button>  }
       <h2 className=" text-center mb-[.5rem] text-[.8rem] text-[#a2a2a2] font-semibold"> نتایج جست و جو مبنی بر عبارت وارد شده :</h2>
       <h3 className=" text-center mb-[2.8rem] font-medium text-[1.8rem]">{search}</h3>
       <ul className=" w-full justify-center flex flex-wrap gap-[1rem] mx-auto mb-[3rem]">
@@ -40,7 +39,7 @@ export default function SearchDoctors() {
                    </li>
         )}
       </ul>
-      {searchBtn  && <button  className="pb-[.3rem] w-[25rem] h-[3.2rem] mx-auto mb-[3rem] text-[#ffff] bg-[#0092ab] border-[#fff] rounded-[9px] border-[1px] custom_shadow4 text-[.95rem] flex items-center justify-center  font-medium " onClick={()=>navigate(`/?specialty=${search}`)}> لیست پزشکان {searchBtn}</button>  }
+      {searchBtn  && <button  className="pb-[.3rem] w-[80%] h-[3.2rem] mx-auto mb-[3rem] text-[#ffff] bg-[#0092ab] border-[#fff] rounded-[9px] border-[1px] custom_shadow4 text-[.95rem] flex items-center justify-center  font-medium " onClick={()=>navigate(`/`)}> لیست پزشکان </button>  }
     </div>
   )
 }

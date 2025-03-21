@@ -1,102 +1,50 @@
 import React, { cloneElement, createContext, ReactElement, useContext, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
-import styled from "styled-components";
 import useOutsidClick from "../hooks/useOutsideClick";
 
-
-const StyledModal = styled.div<{ center?: boolean }>`
-  background: white;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  z-index: 1000;
-  position: fixed;
-  transition: all 0.3s ease-in-out;
-  opacity: 0;
-  transform: translateY(20px);
-  pointer-events: none;  /* از کلیک جلوگیری می‌کند وقتی مدال بسته است */
- 
-  ${({ center }) =>
-    center
-      ? `top: 0%;
-         left: 36%;
-          height: 100%;
-         transform: translate(-50%, -50%) scale(0.95);`
-      : `top: auto;
-         right: 0;`}
-
-  &.open {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    pointer-events: all; /* وقتی باز شد، قابل کلیک است */
-  }
-
-  @media (max-width: 764px) {
-    ${({ center }) => (center ? "top: 80%;" : "width: 100%;")}
-    border-radius: 2rem;
-  }
-`;
-
-const Overlay = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.25);
-  z-index: 1000;
-  transition: opacity 0.3s ease-in-out;
-  opacity: 0;
-  pointer-events: none; /* از کلیک جلوگیری می‌کند وقتی مدال بسته است */
-
-  &.open {
-    opacity: 1;
-    pointer-events: all;
-  }
-`;
-
-
-
-
-interface tyepep{
-  children:ReactElement,
-  name:string,
-  center:boolean
+interface ModalProps {
+  children: React.ReactNode;
 }
-interface tyepepe{
-  children:React.ReactNode
+
+interface OpenProps {
+  openwindowName: string;
+  children: ReactElement;
 }
-interface typeOpen{
-  openwindowName:string,
-  children:ReactElement
+
+interface WindowProps {
+  children: ReactElement;
+  name: string;
+  center: boolean;
 }
+
 interface ModalContextType {
-     openName: string;
-     close: ()=>void
-     open: React.Dispatch<React.SetStateAction<string>>;
+  openName: string;
+  close: () => void;
+  open: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const Context = createContext<Partial<ModalContextType >>({});
-export default function Modal({children}:tyepepe) {
-  const [openName , setOpenName]=useState("");
-  const close = ()=> setOpenName("") ;
+const Context = createContext<Partial<ModalContextType>>({});
+
+export default function Modal({ children }: ModalProps) {
+  const [openName, setOpenName] = useState("");
+  const close = () => setOpenName("");
   const open = setOpenName;
 
   return (
-      <Context.Provider value={{openName , close , open}}>
-          <div> {children} </div>
-      </Context.Provider>
-  )
+    <Context.Provider value={{ openName, close, open }}>
+      <div>{children}</div>
+    </Context.Provider>
+  );
 }
 
-function Open({children , openwindowName}:typeOpen) {
-  const {open} = useContext(Context);
- 
-  return cloneElement(children , {onClick : ()=> open?.(openwindowName)})
+function Open({ children, openwindowName }: OpenProps) {
+  const { open } = useContext(Context);
+
+  return cloneElement(children, { onClick: () => open?.(openwindowName) });
 }
 
-
-function Window({ children, name, center }: tyepep) {
-  const { openName, close = ()=>{} } = useContext(Context);
+function Window({ children, name, center }: WindowProps) {
+  const { openName, close = () => {} } = useContext(Context);
   const { modalRef } = useOutsidClick(close);
   const body = document.body;
 
@@ -110,18 +58,24 @@ function Window({ children, name, center }: tyepep) {
     return () => {
       body.style.overflowY = "scroll";
     };
-  }, [openName, name ,body]);
+  }, [openName, name, body]);
 
   return createPortal(
-    <Overlay className={openName === name ? "open" : ""}>
-      <StyledModal ref={modalRef} className={openName === name ? "open" : ""} center={center}>
+    <div className={`fixed top-0 left-0 w-full h-full bg-black bg-opacity-25 z-50 transition-opacity duration-300 ${openName === name ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}>
+      <div
+        ref={modalRef}
+        className={`bg-white h-[100%] cursor-pointer p-5 z-[100] rounded-[2rem]  shadow-lg fixed transition-all duration-300 opacity-0 transform scale-95 pointer-events-none ${
+          center
+            ? " top-[35rem] sm:rounded-none sm:top-[27.5rem] left-1/2 max-w-lg -translate-x-1/2 -translate-y-1/2"
+            : "  top-[8.2rem] right-0 left-0 w-[100%] sm:max-w-lg    sm:right-[-1.8rem] sm:rounded-none  sm:top-[-1.8rem] "
+        } ${openName === name ? "opacity-100 scale-100 pointer-events-auto" : ""} rounded-lg  w-full  `}
+      >
         <div>{cloneElement(children, { CloseModal: close })}</div>
-      </StyledModal>
-    </Overlay>,
+      </div>
+    </div>,
     document.body
   );
 }
-
 
 Modal.Open = Open;
 Modal.Window = Window;

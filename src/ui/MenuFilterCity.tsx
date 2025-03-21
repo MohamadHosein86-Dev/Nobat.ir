@@ -29,7 +29,9 @@ export default function MenuFilterCity({data , plasehoder ,CloseModal }:typeMneu
     navigate(`/?${city}=${cityFilter}`); 
   }
   if(pathname === "/"){
-    updateFilter(city ,cityFilter);
+    searchParams.set(city , cityFilter);
+    searchParams.delete("page");
+    setSearchParams(searchParams);
   }
    
  }
@@ -48,7 +50,7 @@ export default function MenuFilterCity({data , plasehoder ,CloseModal }:typeMneu
   
   
   return (
-    <div className=" bg-white px-[1.2rem] w-[100%] md:pt-[2rem] p-b[2rem] md:w-[26rem] before:content-['']  before:absolute before:top-[20px] before:w-[50px] before:left-[50%] before:translate-x-[-50%] before:h-[3px] before:bg-[#ccc] before:rounded-[40px]  ">
+    <div className=" bg-white px-[1.2rem] w-[100%]  p-b[2rem]  before:content-['']  before:absolute before:top-[20px] before:w-[50px] before:left-[50%] before:translate-x-[-50%] before:h-[3px] before:bg-[#ccc] before:rounded-[40px]  ">
         <input value={qurey} onChange={(x)=>setqurey(x.target.value)} placeholder={plasehoder} type="text" className=" input sticky top-0 mt-[2rem] w-[100%] h-[1rem] rounded-lg"/>
         <ul className=" overflow-y-scroll h-[60rem]  menu">
           {data[0] !==  "قلب و عروق" ? dataCityes.map((city)=> <li  onClick={()=>{ handleCity(city , "city")}} className=" cursor-pointer border-b-[1px] text-center py-[1rem] " key={city}>{city}</li>) :   

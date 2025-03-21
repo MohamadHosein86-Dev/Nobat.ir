@@ -23,7 +23,7 @@ export default function PageDotor() {
     const [searcgParams , setSearcgParams] =useSearchParams();
   
 
-    const workingHours = doctor?.working_hours.map((res)=>res.day) as Array<string>;
+    const workingHours = doctor?.accepting_patients ? doctor?.working_hours.map((res)=>res.day) as Array<string> : [""];
     const isTodayAcsepting = doctor?.working_hours  &&  findNextAvalableDay(workingHours).map((res)=> res.nextDay );
        
 
