@@ -8,7 +8,6 @@ Nobat.ir is a modern e-commerce platform built with React ⚛️. Browse product
 <br />
 
 <p>
-<h2>🛠️ Features:</h2>
 
 <h2 align="left">🛠️ Features of Nobat.ir</h2>
 
