@@ -10,9 +10,19 @@ Nobat.ir is a modern e-commerce platform built with React ⚛️. Browse product
 <p>
 <h2>🛠️ Features:</h2>
 
-🛒 Shopping Cart: Add, update, and remove products with ease. <br>
-🔐 Authentication: Secure login/signup for personalized experiences. <br>
-⚛️ React-based Frontend: Fast, responsive, and dynamic interface. <br>
-💄 Clean UI: Built with Tailwind CSS for a modern and minimal look. <br>
-🔄 State Management: useReducer + Context/Redux for optimal performance.
+<h2 align="left">🛠️ Features of Nobat.ir</h2>
+
+<ul>
+  <li>🔐 <strong>Secure Authentication:</strong> Easy login/signup for both patients and doctors.</li>
+  <li>📅 <strong>Appointment Scheduling:</strong> Users can book and manage appointments with healthcare professionals seamlessly.</li>
+  <li>🔔 <strong>Real-Time Notifications:</strong> Receive notifications for upcoming appointments, cancellations, or updates.</li>
+  <li>💬 <strong>Doctor-Patient Communication:</strong> Secure messaging system for communication between doctors and patients.</li>
+  <li>⚛️ <strong>React-based Interface:</strong> Fast, dynamic, and responsive UI built with React for optimal performance.</li>
+  <li>🖥️ <strong>Mobile-Friendly:</strong> Fully responsive design that works perfectly on both desktop and mobile devices.</li>
+  <li>📋 <strong>Patient Records:</strong> Doctors can access and manage patient records and medical histories.</li>
+  <li>📊 <strong>Admin Dashboard:</strong> Manage doctors, appointments, and users with an easy-to-use admin panel.</li>
+  <li>🔒 <strong>Data Security:</strong> Sensitive user data is securely stored and protected with the latest encryption methods.</li>
+  <li>📈 <strong>Performance Optimization:</strong> Optimized for speed and performance, ensuring fast load times and smooth user experience.</li>
+</ul>
+
 </p>
