@@ -4,7 +4,7 @@
 Nobat.ir is a modern e-commerce platform built with React ⚛️. Browse products, add items to your cart, and enjoy a smooth, secure, and responsive shopping experience. Powered by a clean UI and real-time state management for effortless navigation and interaction.
 </h4>
 
-<strong>Demo: https://nobat-doctors.liara.run/</strong>
+<strong> Demo: https://nobat-doctors.liara.run/ </strong>
 <br />
 
 <p>
